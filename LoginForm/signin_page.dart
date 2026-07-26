@@ -46,11 +46,14 @@ class _SignInPageState extends State<SignInPage> {
 
               child: Column(
                 children: [
-
-                  const Icon(
-                    Icons.lock_open,
-                    size: 90,
-                    color: Colors.deepPurple,
+                  const CircleAvatar(
+                    radius: 45,
+                    backgroundColor: Colors.deepPurple,
+                    child: Icon(
+                      Icons.lock_open,
+                      size: 45,
+                      color: Colors.white,
+                    ),
                   ),
 
                   const SizedBox(height: 20),
