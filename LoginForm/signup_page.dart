@@ -52,11 +52,14 @@ class _SignUpPageState extends State<SignUpPage> {
 
               child: Column(
                 children: [
-
-                  const Icon(
-                    Icons.person_add,
-                    size: 90,
-                    color: Colors.deepPurple,
+                  const CircleAvatar(
+                    radius: 45,
+                    backgroundColor: Colors.deepPurple,
+                    child: Icon(
+                      Icons.person_add,
+                      size: 50,
+                      color: Colors.white,
+                    ),
                   ),
 
                   const SizedBox(height: 20),
