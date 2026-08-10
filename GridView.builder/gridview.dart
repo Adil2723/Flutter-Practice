@@ -25,6 +25,17 @@ class InputPage extends StatelessWidget {
   Colors.pink,
 ];
 
+final icons = [
+  Icons.fastfood,
+  Icons.directions_car,
+  Icons.shopping_cart,
+  Icons.receipt,
+  Icons.local_hospital,
+  Icons.school,
+  Icons.receipt_long,
+  Icons.flight,
+];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +55,17 @@ class InputPage extends StatelessWidget {
           return Card(
             color: colors[index],
             child: Center(
-              child: Text(categories[index]),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icons[index], size: 50, color: Colors.white),
+                  const SizedBox(height: 8),
+                  Text(
+                    categories[index],
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
             ),
           );
         },
