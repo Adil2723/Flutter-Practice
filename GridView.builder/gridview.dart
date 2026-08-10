@@ -69,7 +69,8 @@ final icons = [
             ),
           );
         },
-      ),
+        physics: const BouncingScrollPhysics(),     
+        ),
     );
   }
 }
