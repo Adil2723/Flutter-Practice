@@ -239,54 +239,56 @@ class _InstagramPageState extends State<InstagramPage> {
       ),
 
 // Bottom Navigation
-bottomNavigationBar: BottomNavigationBar(
-  currentIndex: selectedIndex,
-
-  backgroundColor: Colors.black,
-
-  selectedItemColor: Colors.white,
-  unselectedItemColor: Colors.grey,
-
-  type: BottomNavigationBarType.fixed,
-
-  onTap: (index) {
-    setState(() {
-      selectedIndex = index;
-    });
+  bottomNavigationBar: BottomNavigationBar(
+    currentIndex: selectedIndex,
+    backgroundColor: Colors.black,
+    selectedItemColor: Colors.white,
+    unselectedItemColor: Colors.grey,
+    type: BottomNavigationBarType.fixed,
+    onTap: (index) {
+      setState(() {
+      if(index == 0){
+        Navigator.pushReplacementNamed(context, '/home');
+      } else if(index == 1){
+        Navigator.pushReplacementNamed(context, '/reels');
+      } else if(index == 2){
+        Navigator.pushReplacementNamed(context, '/messages');
+      } else if(index == 3){
+        Navigator.pushReplacementNamed(context, '/search');
+      } else if(index == 4){
+        Navigator.pushReplacementNamed(context, '/profile');
+      }
+      });
   },
-
   items: const [
     BottomNavigationBarItem(
       icon: Icon(Icons.home_outlined),
       activeIcon: Icon(Icons.home),
       label: "Home",
     ),
-
     BottomNavigationBarItem(
       icon: Icon(Icons.movie_outlined),
       activeIcon: Icon(Icons.movie),
       label: "Reels",
     ),
-
     BottomNavigationBarItem(
       icon: Icon(Icons.chat_bubble_outline),
       activeIcon: Icon(Icons.chat_bubble),
       label: "Messages",
+      
     ),
-
     BottomNavigationBarItem(
       icon: Icon(Icons.search),
       label: "Search",
     ),
-
-
     BottomNavigationBarItem(
       icon: Icon(Icons.person_outline),
       activeIcon: Icon(Icons.person),
       label: "Profile",
+
     ),
   ],
 ),
-    );
+  );
   }
 }
